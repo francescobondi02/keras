@@ -1,0 +1,14 @@
+{
+    "name": "keras-explore",
+    "image": "mcr.microsoft.com/devcontainers/python:3.12",
+    "features": {
+        "ghcr.io/devcontainers/features/sshd:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+    "postCreateCommand": "bash -c '(pip install --upgrade pip && pip install -r requirements.txt && pip install -e . --no-deps) > /tmp/keras-setup.log 2>&1; echo SETUP_EXIT=$? >> /tmp/keras-setup.log'",
+    "customizations": {
+        "vscode": {
+            "extensions": ["charliermarsh.ruff", "ms-python.python"]
+        }
+    }
+}
